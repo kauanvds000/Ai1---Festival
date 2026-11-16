@@ -339,43 +339,36 @@ ul { list-style: none; }
 .mapa__container { position: relative; width: 100%; }
 .mapa__svg { width: 100%; height: auto; display: block; }
 
-.mapa__chao { fill: var(--azul-escuro); stroke: var(--linha); stroke-width: 2; }
-.mapa__caminho { stroke: #13274f; stroke-width: 40; stroke-linecap: round; fill: none; }
-.mapa__plateia { fill: #13274f; stroke: #2c4d85; stroke-width: 3; stroke-dasharray: 10 8; }
-.mapa__fixo { fill: #101f40; stroke: #2c4d85; stroke-width: 2; }
-.mapa__entrada { fill: var(--destaque-2); }
+.mapa__svg { border-radius: 1rem; box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.6); }
 
-.mapa__label { font-family: var(--fonte-texto); font-weight: 800; font-size: 26px; fill: var(--branco); text-anchor: middle; pointer-events: none; }
-.mapa__label--peq { font-size: 19px; }
-.mapa__label--escuro { fill: #cfe0ff; }
-.mapa__sub { font-family: var(--fonte-texto); font-size: 14px; fill: rgba(255, 255, 255, 0.85); text-anchor: middle; pointer-events: none; }
-.mapa__sub--escuro { fill: #8aa0c4; }
+/* Etiquetas com o nome das zonas */
+.mapa__tag { pointer-events: none; }
+.mapa__tag rect { fill: rgba(5, 7, 13, 0.82); stroke: rgba(255, 255, 255, 0.25); stroke-width: 1.5; }
+.mapa__tag text { font-family: var(--fonte-texto); font-weight: 800; font-size: 15px; letter-spacing: 1px; fill: var(--branco); text-anchor: middle; }
+.mapa__tag--clicavel rect { fill: var(--destaque); stroke: none; }
 
-/* Zonas clicáveis */
+/* Zonas clicáveis: transparentes por cima da imagem */
 .zona { cursor: pointer; outline: none; }
-.zona rect { stroke: var(--branco); stroke-width: 3; transition: fill 0.3s, stroke 0.3s, filter 0.3s, transform 0.3s; transform-box: fill-box; transform-origin: center; }
-.zona--palco rect { fill: #1d4ed8; }
-.zona--restauracao rect { fill: #e8430c; }
-.zona--loja rect { fill: #4338ca; }
-
-.zona:hover rect,
-.zona:focus rect,
-.zona.hover rect {
-  stroke: var(--destaque-claro);
-  stroke-width: 6;
-  filter: drop-shadow(0 0 14px rgba(255, 106, 26, 0.95));
-  transform: scale(1.03);
+.zona rect {
+  fill: rgba(255, 106, 26, 0);
+  stroke: var(--destaque);
+  stroke-width: 3;
+  stroke-dasharray: 12 8;
+  transition: fill 0.3s, stroke-width 0.3s, filter 0.3s;
+  animation: pulsar 2.5s ease-in-out infinite;
 }
-.zona--palco:hover rect { fill: #2f6bff; }
-.zona--restauracao:hover rect { fill: #ff6a1a; }
-.zona--loja:hover rect { fill: #5b50e8; }
-
-/* animação "pulsar" para mostrar que é clicável */
-.zona rect { animation: pulsar 2.5s ease-in-out infinite; }
-.zona:hover rect { animation: none; }
+.zona:hover rect,
+.zona:focus-visible rect {
+  fill: rgba(255, 106, 26, 0.22);
+  stroke: var(--destaque-claro);
+  stroke-width: 5;
+  stroke-dasharray: none;
+  filter: drop-shadow(0 0 14px rgba(255, 106, 26, 0.95));
+  animation: none;
+}
 @keyframes pulsar {
   0%, 100% { stroke-opacity: 1; }
-  50% { stroke-opacity: 0.3; }
+  50% { stroke-opacity: 0.25; }
 }
 
 .mapa__tooltip {
@@ -400,10 +393,8 @@ ul { list-style: none; }
 .mapa__legenda { display: flex; flex-wrap: wrap; gap: 1rem 3%; margin-top: 1.5rem; font-size: 0.9rem; }
 .mapa__legenda li { display: flex; align-items: center; gap: 0.5rem; }
 .cor { width: 1rem; height: 1rem; border-radius: 0.2rem; display: inline-block; }
-.cor--palco { background: #1d4ed8; }
-.cor--restauracao { background: #e8430c; }
-.cor--loja { background: #4338ca; }
-.cor--fixo { background: #101f40; border: 1px solid #2c4d85; }
+.cor--clicavel { background: var(--destaque); }
+.cor--fixo { background: rgba(5, 7, 13, 0.82); border: 1px solid rgba(255, 255, 255, 0.4); }
 
 /* =========================================================
    SECÇÃO 4 — Patrocinadores
@@ -583,6 +574,5 @@ ul { list-style: none; }
   .numero { padding: 0.7rem 0.3rem; }
   .numero strong { font-size: 1.8rem; }
   .numero span { font-size: 0.75rem; }
-  .mapa__label { font-size: 30px; }
-  .mapa__sub { display: none; }
+  .mapa__tag text { font-size: 22px; }
 }
