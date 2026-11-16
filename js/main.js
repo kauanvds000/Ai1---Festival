@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function atualizarRelogio() {
     const agora = new Date();
     const data = agora.toLocaleDateString('pt-PT', {
-      weekday: 'long', day: '2-digit', month: 'long', year: 'numeric'
+      weekday: 'short', day: '2-digit', month: 'short', year: 'numeric'
     });
     const hora = agora.toLocaleTimeString('pt-PT');
     relogio.textContent = data + ' · ' + hora;
@@ -19,6 +19,34 @@ document.addEventListener('DOMContentLoaded', function () {
   if (relogio) {
     atualizarRelogio();
     setInterval(atualizarRelogio, 1000);
+  }
+
+  /* ---------- 1b. Contagem decrescente para o festival ---------- */
+  const DATA_FESTIVAL = new Date('2027-09-03T18:00:00'); // abertura das portas
+  const cdDias = document.getElementById('cdDias');
+
+  function doisDigitos(n) { return String(n).padStart(2, '0'); }
+
+  function atualizarContagem() {
+    const diff = Math.max(0, DATA_FESTIVAL - new Date()); // em milissegundos
+    const dias = Math.floor(diff / 86400000);
+    const horas = Math.floor((diff % 86400000) / 3600000);
+    const min = Math.floor((diff % 3600000) / 60000);
+    const seg = Math.floor((diff % 60000) / 1000);
+
+    cdDias.textContent = dias;
+    document.getElementById('cdHoras').textContent = doisDigitos(horas);
+    document.getElementById('cdMin').textContent = doisDigitos(min);
+    document.getElementById('cdSeg').textContent = doisDigitos(seg);
+
+    // quando chegar a hora, troca o texto
+    if (diff === 0) {
+      document.querySelector('.contagem__label').textContent = '🤘 É agora!';
+    }
+  }
+  if (cdDias) {
+    atualizarContagem();
+    setInterval(atualizarContagem, 1000);
   }
 
   /* ---------- 2. Menu de navegação ---------- */
