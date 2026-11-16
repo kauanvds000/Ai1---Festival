@@ -11,10 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
   function atualizarRelogio() {
     const agora = new Date();
     const data = agora.toLocaleDateString('pt-PT', {
-      weekday: 'short', day: '2-digit', month: 'short', year: 'numeric'
+      weekday: 'long', day: '2-digit', month: 'long', year: 'numeric'
     });
     const hora = agora.toLocaleTimeString('pt-PT');
-    relogio.textContent = data + ' · ' + hora;
+    // primeira letra em maiúscula (ex: "Segunda-feira, 16 de novembro de 2026")
+    relogio.textContent = '🕒 ' + data.charAt(0).toUpperCase() + data.slice(1) + ' · ' + hora;
   }
   if (relogio) {
     atualizarRelogio();
