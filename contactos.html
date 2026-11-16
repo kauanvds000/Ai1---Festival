@@ -11,60 +11,64 @@
 </head>
 <body>
 
-  <!-- ===== BARRA SUPERIOR: data/hora + redes sociais ===== -->
+  <!-- ===== BARRA SUPERIOR: data e hora atual ===== -->
   <div class="topbar">
     <div class="wrapper topbar__inner">
       <p class="topbar__clock" id="relogio" aria-live="polite">--</p>
-      <ul class="topbar__social">
-        <li><a href="index.html#" aria-label="Facebook">FB</a></li>
-        <li><a href="index.html#" aria-label="Instagram">IG</a></li>
-        <li><a href="index.html#" aria-label="YouTube">YT</a></li>
-        <li><a href="index.html#" aria-label="TikTok">TT</a></li>
-      </ul>
+      <p class="topbar__info">3 · 4 · 5 Setembro 2027 — Recinto da Feira de São Mateus, Viseu</p>
     </div>
   </div>
 
-  <!-- ===== CABEÇALHO + MENU ===== -->
+  <!-- ===== CABEÇALHO: menu à esquerda · logo ao centro · menu à direita ===== -->
   <header class="header">
     <div class="wrapper header__inner">
-      <a href="index.html" class="logo">ROCK<span>in</span>VISEU</a>
+
+      <nav class="nav nav--esq" aria-label="Menu esquerdo">
+        <ul class="nav__list">
+          <li class="nav__item tem-sub">
+            <a href="index.html#mapa" class="nav__link">Mapa</a>
+            <ul class="submenu">
+              <li><a href="index.html#mapa">Palcos</a></li>
+              <li><a href="index.html#mapa">Restauração</a></li>
+              <li><a href="index.html#mapa">Loja Oficial</a></li>
+            </ul>
+          </li>
+          <li class="nav__item tem-sub">
+            <a href="bilhetes.html" class="nav__link">Bilhetes</a>
+            <ul class="submenu">
+              <li><a href="bilhetes.html#diario">Bilhete Diário</a></li>
+              <li><a href="bilhetes.html#passe">Passe 3 Dias</a></li>
+              <li><a href="bilhetes.html#vip">VIP</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="index.html" class="logo" aria-label="Rock in Viseu — página inicial">ROCK<span>in</span>VISEU</a>
+
+      <nav class="nav nav--dir" aria-label="Menu direito">
+        <ul class="nav__list">
+          <li class="nav__item tem-sub">
+            <a href="noticias.html" class="nav__link ativo">Notícias</a>
+            <ul class="submenu">
+              <li><a href="noticias.html">Últimas Notícias</a></li>
+              <li><a href="contactos.html">Contactos</a></li>
+            </ul>
+          </li>
+          <li class="nav__item tem-sub">
+            <a href="index.html#cartaz" class="nav__link">Agenda</a>
+            <ul class="submenu">
+              <li><a href="index.html#cartaz" data-dia="1">Sexta · 3 Set</a></li>
+              <li><a href="index.html#cartaz" data-dia="2">Sábado · 4 Set</a></li>
+              <li><a href="index.html#cartaz" data-dia="3">Domingo · 5 Set</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-
-      <nav class="nav" id="nav" aria-label="Menu principal">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="index.html" class="nav__link">Início</a></li>
-          <li class="nav__item tem-sub">
-            <a href="index.html#festival" class="nav__link">O Festival</a>
-            <ul class="submenu">
-              <li><a href="index.html#festival">Sobre</a></li>
-              <li><a href="index.html#festival">História</a></li>
-              <li><a href="index.html#info">Recinto</a></li>
-            </ul>
-          </li>
-          <li class="nav__item tem-sub">
-            <a href="index.html#cartaz" class="nav__link">Cartaz</a>
-            <ul class="submenu">
-              <li><a href="index.html#cartaz" data-dia="1">Dia 1 — Sexta</a></li>
-              <li><a href="index.html#cartaz" data-dia="2">Dia 2 — Sábado</a></li>
-              <li><a href="index.html#cartaz" data-dia="3">Dia 3 — Domingo</a></li>
-            </ul>
-          </li>
-          <li class="nav__item"><a href="index.html#bilhetes" class="nav__link">Bilhetes</a></li>
-          <li class="nav__item tem-sub">
-            <a href="index.html#info" class="nav__link">Informações</a>
-            <ul class="submenu">
-              <li><a href="index.html#info">Como Chegar</a></li>
-              <li><a href="index.html#info">Perguntas Frequentes</a></li>
-              <li><a href="index.html#info">Regulamento</a></li>
-            </ul>
-          </li>
-          <li class="nav__item"><a href="index.html#noticias" class="nav__link">Notícias</a></li>
-          <li class="nav__item"><a href="contactos.html" class="nav__link nav__link--cta ativo">Contactos</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
@@ -76,7 +80,7 @@
       </div>
     </section>
 
-    <section class="contactos">
+    <section class="pagina-conteudo">
       <div class="wrapper contactos__grid">
         <aside class="contactos__info">
           <h2>Organização</h2>
@@ -97,25 +101,44 @@
       <div>
         <a href="index.html" class="logo">ROCK<span>in</span>VISEU</a>
         <p>O festival de rock da feira popular mais antiga do país.</p>
+        <ul class="social">
+          <li><a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9l5.8 3.1-5.8 3.1z"/></svg>
+          </a></li>
+          <li><a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2.2c-2.7 0-3 0-4 .1C4.9 2.4 2.4 4.9 2.3 8c-.1 1-.1 1.3-.1 4s0 3 .1 4c.1 3.1 2.6 5.6 5.7 5.7 1 .1 1.3.1 4 .1s3 0 4-.1c3.1-.1 5.6-2.6 5.7-5.7.1-1 .1-1.3.1-4s0-3-.1-4c-.1-3.1-2.6-5.6-5.7-5.7-1-.1-1.3-.1-4-.1zm0 1.8c2.6 0 2.9 0 4 .1 2.2.1 3.8 1.7 3.9 3.9.1 1 .1 1.3.1 4s0 2.9-.1 4c-.1 2.2-1.7 3.8-3.9 3.9-1 .1-1.3.1-4 .1s-2.9 0-4-.1c-2.2-.1-3.8-1.7-3.9-3.9C4 14.9 4 14.6 4 12s0-2.9.1-4C4.2 5.8 5.8 4.2 8 4.1c1 0 1.4-.1 4-.1z"/></svg>
+          </a></li>
+          <li><a href="https://www.tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.2V2h-3.4v13.4a2.9 2.9 0 1 1-2-2.7V9.2a6.3 6.3 0 1 0 5.4 6.2V8.6a8.2 8.2 0 0 0 4.8 1.5V6.7h-1z"/></svg>
+          </a></li>
+          <li><a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+          </a></li>
+          <li><a href="https://x.com" target="_blank" rel="noopener" aria-label="X">
+            <svg viewBox="0 0 24 24"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L1.8 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.2 4.7H5.4l11.3 14.5z"/></svg>
+          </a></li>
+        </ul>
       </div>
-      <nav aria-label="Links do rodapé">
+      <nav aria-label="Links do festival">
         <h4>Festival</h4>
         <ul>
-          <li><a href="index.html#cartaz">Cartaz</a></li>
-          <li><a href="index.html#bilhetes">Bilhetes</a></li>
-          <li><a href="index.html#info">Informações</a></li>
+          <li><a href="index.html#cartaz">Agenda</a></li>
+          <li><a href="index.html#mapa">Mapa</a></li>
+          <li><a href="bilhetes.html">Bilhetes</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
         </ul>
       </nav>
-      <nav aria-label="Links legais">
+      <nav aria-label="Links de apoio">
         <h4>Apoio</h4>
         <ul>
           <li><a href="contactos.html">Contactos</a></li>
-          <li><a href="index.html#info">Regulamento</a></li>
-          <li><a href="index.html#">Política de Privacidade</a></li>
+          <li><a href="#">Regulamento</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a></li>
         </ul>
       </nav>
     </div>
-    <p class="footer__copy">&copy; 2027 Rock in Viseu · Projeto académico — Aplicações para a Internet I, ESTGV</p>
+    <p class="footer__copy">&copy; 2027 Rock in Viseu · Projeto académico (cartaz fictício) — Aplicações para a Internet I, ESTGV</p>
   </footer>
 
   <script src="js/main.js"></script>
