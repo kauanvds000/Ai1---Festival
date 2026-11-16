@@ -77,28 +77,26 @@
   <main>
     <!-- ===== SECÇÃO 1: Carrossel + descrição do festival ===== -->
     <section class="intro" id="festival">
+      <!-- Carrossel em ecrã inteiro -->
       <div class="slider" aria-label="Fotografias do festival">
         <figure class="slide ativo">
-          <img src="img/slide1.svg" alt="Público em frente ao palco principal com luzes amarelas">
+          <img src="img/festival1.jpg" alt="Público com as mãos no ar a fazer o sinal do rock em frente ao palco">
         </figure>
         <figure class="slide">
-          <img src="img/slide2.svg" alt="Concerto com luzes vermelhas e multidão de braços no ar">
+          <img src="img/festival2.jpg" alt="Vocalista no palco iluminado por luzes azuis, com o público a filmar">
         </figure>
         <figure class="slide">
-          <img src="img/slide3.svg" alt="Palco iluminado em tons de azul e roxo">
+          <img src="img/slide3.svg" alt="Palco iluminado e público">
         </figure>
-
-        <button class="slider__btn slider__btn--prev" id="prev" aria-label="Imagem anterior">&#10094;</button>
-        <button class="slider__btn slider__btn--next" id="next" aria-label="Imagem seguinte">&#10095;</button>
-        <div class="slider__dots" id="dots"></div>
       </div>
 
+      <!-- Descrição por cima do carrossel -->
       <div class="wrapper intro__texto">
         <article class="intro__desc">
           <p class="etiqueta">Quinta-feira · 10 Dezembro 2026</p>
           <h1>Rock in Viseu</h1>
-          <p>O <strong>Rock in Viseu</strong> é um dia inteiro dedicado ao rock, no coração de Viseu. Do fim da tarde até de madrugada, dois palcos recebem alguns dos maiores nomes do rock internacional e português.</p>
-          <p>Além dos concertos, o recinto tem zona de restauração com street food da região, loja oficial do festival e diversões para quem quer descansar entre bandas.</p>
+          <p>Um dia inteiro dedicado ao rock, no coração de Viseu. Do fim da tarde até de madrugada, dois palcos recebem alguns dos maiores nomes do rock internacional e português.</p>
+          <p>Além dos concertos, há zona de restauração com street food da região, loja oficial e diversões para descansar entre bandas.</p>
           <a href="bilhetes.html" class="btn">Comprar Bilhete</a>
         </article>
         <aside class="intro__numeros">
@@ -107,6 +105,13 @@
           <div class="numero"><strong>2</strong><span>palcos</span></div>
           <div class="numero"><strong>30k</strong><span>pessoas</span></div>
         </aside>
+      </div>
+
+      <!-- Controlos do carrossel -->
+      <div class="slider__controlos">
+        <button class="slider__btn" id="prev" aria-label="Imagem anterior">&#10094;</button>
+        <div class="slider__dots" id="dots"></div>
+        <button class="slider__btn" id="next" aria-label="Imagem seguinte">&#10095;</button>
       </div>
     </section>
 

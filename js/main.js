@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('prev').addEventListener('click', function () { mostrarSlide(atual - 1); reiniciar(); });
 
     // pausa enquanto o rato está por cima
-    const slider = document.querySelector('.slider');
+    const slider = document.querySelector('.slider__controlos'); // pausa enquanto o rato está nos controlos
     slider.addEventListener('mouseenter', function () { clearInterval(temporizador); });
     slider.addEventListener('mouseleave', reiniciar);
 
