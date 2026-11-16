@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rock in Viseu — o festival de rock no coração da Feira de São Mateus.">
+  <title>Rock in Viseu 2027 | Festival de Música</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== BARRA SUPERIOR: data/hora + redes sociais ===== -->
+  <div class="topbar">
+    <div class="wrapper topbar__inner">
+      <p class="topbar__clock" id="relogio" aria-live="polite">--</p>
+      <ul class="topbar__social">
+        <li><a href="#" aria-label="Facebook">FB</a></li>
+        <li><a href="#" aria-label="Instagram">IG</a></li>
+        <li><a href="#" aria-label="YouTube">YT</a></li>
+        <li><a href="#" aria-label="TikTok">TT</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== CABEÇALHO + MENU ===== -->
+  <header class="header">
+    <div class="wrapper header__inner">
+      <a href="index.html" class="logo">ROCK<span>in</span>VISEU</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link ativo">Início</a></li>
+          <li class="nav__item tem-sub">
+            <a href="#festival" class="nav__link">O Festival</a>
+            <ul class="submenu">
+              <li><a href="#festival">Sobre</a></li>
+              <li><a href="#festival">História</a></li>
+              <li><a href="#info">Recinto</a></li>
+            </ul>
+          </li>
+          <li class="nav__item tem-sub">
+            <a href="#cartaz" class="nav__link">Cartaz</a>
+            <ul class="submenu">
+              <li><a href="#cartaz" data-dia="1">Dia 1 — Sexta</a></li>
+              <li><a href="#cartaz" data-dia="2">Dia 2 — Sábado</a></li>
+              <li><a href="#cartaz" data-dia="3">Dia 3 — Domingo</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="#bilhetes" class="nav__link">Bilhetes</a></li>
+          <li class="nav__item tem-sub">
+            <a href="#info" class="nav__link">Informações</a>
+            <ul class="submenu">
+              <li><a href="#info">Como Chegar</a></li>
+              <li><a href="#info">Perguntas Frequentes</a></li>
+              <li><a href="#info">Regulamento</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="#noticias" class="nav__link">Notícias</a></li>
+          <li class="nav__item"><a href="contactos.html" class="nav__link nav__link--cta">Contactos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== SLIDER (JavaScript) ===== -->
+    <section class="slider" aria-label="Destaques">
+      <div class="slider__track">
+        <figure class="slide ativo">
+          <img src="img/slide1.svg" alt="Público em frente ao palco principal com luzes amarelas">
+          <figcaption class="slide__texto">
+            <p class="slide__data">3 · 4 · 5 SETEMBRO 2027</p>
+            <h1>Rock in Viseu</h1>
+            <p>Três noites de guitarras no coração da Feira de São Mateus.</p>
+            <a href="#bilhetes" class="btn">Comprar Bilhete</a>
+          </figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="img/slide2.svg" alt="Concerto com luzes vermelhas e multidão de braços no ar">
+          <figcaption class="slide__texto">
+            <p class="slide__data">CARTAZ COMPLETO</p>
+            <h2>15 bandas · 2 palcos</h2>
+            <p>Do rock clássico ao metal, com o melhor da cena nacional.</p>
+            <a href="#cartaz" class="btn">Ver Cartaz</a>
+          </figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="img/slide3.svg" alt="Palco iluminado em tons de azul e roxo">
+          <figcaption class="slide__texto">
+            <p class="slide__data">ENTRADA NA FEIRA INCLUÍDA</p>
+            <h2>A feira está a rockar</h2>
+            <p>Gastronomia, diversões e música até de madrugada.</p>
+            <a href="#festival" class="btn">Saber Mais</a>
+          </figcaption>
+        </figure>
+      </div>
+
+      <button class="slider__btn slider__btn--prev" id="prev" aria-label="Imagem anterior">&#10094;</button>
+      <button class="slider__btn slider__btn--next" id="next" aria-label="Imagem seguinte">&#10095;</button>
+      <div class="slider__dots" id="dots"></div>
+    </section>
+
+    <!-- ===== CONTAGEM DECRESCENTE ===== -->
+    <section class="countdown">
+      <div class="wrapper countdown__inner">
+        <h2 class="countdown__titulo">Faltam</h2>
+        <div class="countdown__grid">
+          <div class="countdown__item"><span id="cdDias">0</span><small>dias</small></div>
+          <div class="countdown__item"><span id="cdHoras">0</span><small>horas</small></div>
+          <div class="countdown__item"><span id="cdMin">0</span><small>minutos</small></div>
+          <div class="countdown__item"><span id="cdSeg">0</span><small>segundos</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOBRE O FESTIVAL ===== -->
+    <section class="sobre" id="festival">
+      <div class="wrapper sobre__inner">
+        <article class="sobre__texto">
+          <h2 class="titulo">O Festival</h2>
+          <p>O <strong>Rock in Viseu</strong> nasce dentro da Feira de São Mateus, a feira popular mais antiga do país, para juntar a tradição de Viseu à energia das guitarras elétricas.</p>
+          <p>Durante três noites, o recinto da feira transforma-se num grande festival: dois palcos, bandas nacionais e internacionais, zona de street food e as diversões de sempre.</p>
+          <a href="#cartaz" class="btn btn--outline">Conhecer o Cartaz</a>
+        </article>
+        <aside class="sobre__numeros">
+          <div class="numero"><strong>3</strong><span>noites</span></div>
+          <div class="numero"><strong>15</strong><span>bandas</span></div>
+          <div class="numero"><strong>2</strong><span>palcos</span></div>
+          <div class="numero"><strong>30k</strong><span>pessoas</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== CARTAZ ===== -->
+    <section class="cartaz" id="cartaz">
+      <div class="wrapper">
+        <h2 class="titulo titulo--claro">Cartaz 2027</h2>
+
+        <div class="tabs" role="tablist">
+          <button class="tab ativo" data-dia="1" role="tab">Sex · 3 Set</button>
+          <button class="tab" data-dia="2" role="tab">Sáb · 4 Set</button>
+          <button class="tab" data-dia="3" role="tab">Dom · 5 Set</button>
+        </div>
+
+        <div class="cartaz__dia ativo" data-dia="1">
+          <article class="banda banda--headliner"><span class="banda__palco">Palco Viseu · 23h30</span><h3>Os Lobos de Granito</h3><p>Hard rock</p></article>
+          <article class="banda"><span class="banda__palco">Palco Viseu · 21h45</span><h3>Rádio Fantasma</h3><p>Indie rock</p></article>
+          <article class="banda"><span class="banda__palco">Palco Dão · 20h30</span><h3>Ferrugem</h3><p>Garage rock</p></article>
+          <article class="banda"><span class="banda__palco">Palco Dão · 19h15</span><h3>Maré Elétrica</h3><p>Surf rock</p></article>
+          <article class="banda"><span class="banda__palco">Palco Dão · 18h00</span><h3>Os Viriatos</h3><p>Rock português</p></article>
+        </div>
+
+        <div class="cartaz__dia" data-dia="2">
+          <article class="banda banda--headliner"><span class="banda__palco">Palco Viseu · 23h30</span><h3>Iron Saudade</h3><p>Heavy metal</p></article>
+          <article class="banda"><span class="banda__palco">Palco Viseu · 21h45</span><h3>Neon Serra</h3><p>Rock alternativo</p></article>
+          <article class="banda"><span class="banda__palco">Palco Dão · 20h30</span><h3>Pedra Solta</h3><p>Stoner rock</p></article>
+          <article class="banda"><span class="banda__palco">Palco Dão · 19h15</span><h3>Trovoada</h3><p>Punk rock</p></article>
+          <article class="banda"><span class="banda__palco">Palco Dão · 18h00</span><h3>Café Distorção</h3><p>Rock psicadélico</p></article>
+        </div>
+
+        <div class="cartaz__dia" data-dia="3">
+          <article class="banda banda--headliner"><span class="banda__palco">Palco Viseu · 23h00</span><h3>The Midnight Fair</h3><p>Rock clássico</p></article>
+          <article class="banda"><span class="banda__palco">Palco Viseu · 21h30</span><h3>Vulcão Azul</h3><p>Pop rock</p></article>
+          <article class="banda"><span class="banda__palco">Palco Dão · 20h15</span><h3>Estrada Nacional 2</h3><p>Blues rock</p></article>
+          <article class="banda"><span class="banda__palco">Palco Dão · 19h00</span><h3>Granizo</h3><p>Post-rock</p></article>
+          <article class="banda"><span class="banda__palco">Palco Dão · 18h00</span><h3>Banda da Feira</h3><p>Covers</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BILHETES ===== -->
+    <section class="bilhetes" id="bilhetes">
+      <div class="wrapper">
+        <h2 class="titulo">Bilhetes</h2>
+        <div class="bilhetes__grid">
+          <article class="bilhete">
+            <h3>Diário</h3>
+            <p class="bilhete__preco">25€</p>
+            <ul><li>Acesso a 1 dia</li><li>2 palcos</li><li>Entrada na feira</li></ul>
+            <a href="contactos.html" class="btn btn--outline">Pedir informação</a>
+          </article>
+          <article class="bilhete bilhete--destaque">
+            <span class="bilhete__tag">Mais vendido</span>
+            <h3>Passe 3 Dias</h3>
+            <p class="bilhete__preco">55€</p>
+            <ul><li>Acesso aos 3 dias</li><li>2 palcos</li><li>Entrada na feira</li><li>Pulseira oficial</li></ul>
+            <a href="contactos.html" class="btn">Pedir informação</a>
+          </article>
+          <article class="bilhete">
+            <h3>VIP</h3>
+            <p class="bilhete__preco">120€</p>
+            <ul><li>Acesso aos 3 dias</li><li>Zona VIP com vista</li><li>Bar exclusivo</li></ul>
+            <a href="contactos.html" class="btn btn--outline">Pedir informação</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NOTÍCIAS ===== -->
+    <section class="noticias" id="noticias">
+      <div class="wrapper">
+        <h2 class="titulo titulo--claro">Notícias</h2>
+        <div class="noticias__grid">
+          <article class="noticia">
+            <time datetime="2026-11-10">10 Nov 2026</time>
+            <h3>Primeiros nomes confirmados</h3>
+            <p>Os Lobos de Granito e Iron Saudade são os primeiros cabeças de cartaz do Rock in Viseu 2027.</p>
+          </article>
+          <article class="noticia">
+            <time datetime="2026-11-02">02 Nov 2026</time>
+            <h3>Passes de 3 dias já à venda</h3>
+            <p>Os primeiros 1000 passes têm preço especial de lançamento. Não fiques de fora.</p>
+          </article>
+          <article class="noticia">
+            <time datetime="2026-10-20">20 Out 2026</time>
+            <h3>Concurso de bandas locais</h3>
+            <p>As bandas da região de Viseu podem candidatar-se para abrir o Palco Dão.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INFORMAÇÕES ===== -->
+    <section class="info" id="info">
+      <div class="wrapper info__grid">
+        <article>
+          <h3>Como chegar</h3>
+          <p>Recinto da Feira de São Mateus, Viseu. A 5 minutos a pé do centro histórico, com parques de estacionamento nas imediações e autocarros reforçados nos dias do festival.</p>
+        </article>
+        <article>
+          <h3>Perguntas frequentes</h3>
+          <details><summary>Menores podem entrar?</summary><p>Sim, menores de 16 anos acompanhados por um adulto.</p></details>
+          <details><summary>Posso sair e voltar a entrar?</summary><p>Sim, com a pulseira oficial do festival.</p></details>
+          <details><summary>Há multibanco no recinto?</summary><p>Sim, junto à entrada principal.</p></details>
+        </article>
+        <article>
+          <h3>Regulamento</h3>
+          <p>Não é permitida a entrada de garrafas de vidro, objetos cortantes ou equipamento de gravação profissional.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter">
+      <div class="wrapper newsletter__inner">
+        <div>
+          <h2>Não percas nenhum riff</h2>
+          <p>Recebe as novidades do cartaz em primeira mão.</p>
+        </div>
+        <form class="newsletter__form" id="newsletterForm" novalidate>
+          <input type="email" id="newsEmail" placeholder="O teu email" aria-label="Email">
+          <button type="submit" class="btn">Subscrever</button>
+          <p class="newsletter__msg" id="newsMsg" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== PATROCINADORES ===== -->
+    <section class="parceiros">
+      <div class="wrapper">
+        <h2 class="parceiros__titulo">Organização e Parceiros</h2>
+        <ul class="parceiros__lista">
+          <li>Município de Viseu</li>
+          <li>Feira de São Mateus</li>
+          <li>Rádio Rock</li>
+          <li>Vinhos do Dão</li>
+          <li>IPV</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="footer">
+    <div class="wrapper footer__grid">
+      <div>
+        <a href="index.html" class="logo">ROCK<span>in</span>VISEU</a>
+        <p>O festival de rock da feira popular mais antiga do país.</p>
+      </div>
+      <nav aria-label="Links do rodapé">
+        <h4>Festival</h4>
+        <ul>
+          <li><a href="#cartaz">Cartaz</a></li>
+          <li><a href="#bilhetes">Bilhetes</a></li>
+          <li><a href="#info">Informações</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Links legais">
+        <h4>Apoio</h4>
+        <ul>
+          <li><a href="contactos.html">Contactos</a></li>
+          <li><a href="#info">Regulamento</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer__copy">&copy; 2027 Rock in Viseu · Projeto académico — Aplicações para a Internet I, ESTGV</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rock in Viseu — o festival de rock no coração da Feira de São Mateus.">
+  <title>Contactos | Rock in Viseu 2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== BARRA SUPERIOR: data/hora + redes sociais ===== -->
+  <div class="topbar">
+    <div class="wrapper topbar__inner">
+      <p class="topbar__clock" id="relogio" aria-live="polite">--</p>
+      <ul class="topbar__social">
+        <li><a href="index.html#" aria-label="Facebook">FB</a></li>
+        <li><a href="index.html#" aria-label="Instagram">IG</a></li>
+        <li><a href="index.html#" aria-label="YouTube">YT</a></li>
+        <li><a href="index.html#" aria-label="TikTok">TT</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== CABEÇALHO + MENU ===== -->
+  <header class="header">
+    <div class="wrapper header__inner">
+      <a href="index.html" class="logo">ROCK<span>in</span>VISEU</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Início</a></li>
+          <li class="nav__item tem-sub">
+            <a href="index.html#festival" class="nav__link">O Festival</a>
+            <ul class="submenu">
+              <li><a href="index.html#festival">Sobre</a></li>
+              <li><a href="index.html#festival">História</a></li>
+              <li><a href="index.html#info">Recinto</a></li>
+            </ul>
+          </li>
+          <li class="nav__item tem-sub">
+            <a href="index.html#cartaz" class="nav__link">Cartaz</a>
+            <ul class="submenu">
+              <li><a href="index.html#cartaz" data-dia="1">Dia 1 — Sexta</a></li>
+              <li><a href="index.html#cartaz" data-dia="2">Dia 2 — Sábado</a></li>
+              <li><a href="index.html#cartaz" data-dia="3">Dia 3 — Domingo</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="index.html#bilhetes" class="nav__link">Bilhetes</a></li>
+          <li class="nav__item tem-sub">
+            <a href="index.html#info" class="nav__link">Informações</a>
+            <ul class="submenu">
+              <li><a href="index.html#info">Como Chegar</a></li>
+              <li><a href="index.html#info">Perguntas Frequentes</a></li>
+              <li><a href="index.html#info">Regulamento</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="index.html#noticias" class="nav__link">Notícias</a></li>
+          <li class="nav__item"><a href="contactos.html" class="nav__link nav__link--cta ativo">Contactos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="pagina-topo">
+      <div class="wrapper">
+        <h1>Contactos</h1>
+        <p>Dúvidas, sugestões ou reclamações? Fala connosco.</p>
+      </div>
+    </section>
+
+    <section class="contactos">
+      <div class="wrapper contactos__grid">
+        <aside class="contactos__info">
+          <h2>Organização</h2>
+          <p><strong>Morada:</strong><br>Recinto da Feira de São Mateus<br>3500 Viseu</p>
+          <p><strong>Email:</strong><br>geral@rockinviseu.pt</p>
+          <p><strong>Telefone:</strong><br>+351 232 000 000<br><small>(chamada para a rede fixa nacional)</small></p>
+          <p><strong>Horário:</strong><br>Dias úteis, 9h00 – 18h00</p>
+        </aside>
+        <!-- O componente React é montado aqui -->
+        <div class="contactos__form" id="formulario-react"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="footer">
+    <div class="wrapper footer__grid">
+      <div>
+        <a href="index.html" class="logo">ROCK<span>in</span>VISEU</a>
+        <p>O festival de rock da feira popular mais antiga do país.</p>
+      </div>
+      <nav aria-label="Links do rodapé">
+        <h4>Festival</h4>
+        <ul>
+          <li><a href="index.html#cartaz">Cartaz</a></li>
+          <li><a href="index.html#bilhetes">Bilhetes</a></li>
+          <li><a href="index.html#info">Informações</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Links legais">
+        <h4>Apoio</h4>
+        <ul>
+          <li><a href="contactos.html">Contactos</a></li>
+          <li><a href="index.html#info">Regulamento</a></li>
+          <li><a href="index.html#">Política de Privacidade</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer__copy">&copy; 2027 Rock in Viseu · Projeto académico — Aplicações para a Internet I, ESTGV</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- React (via CDN) + Babel para escrever JSX diretamente no browser -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Código JSX dentro da página para funcionar também ao abrir o ficheiro diretamente (file://) -->
+  <script type="text/babel">
+/* =========================================================
+   ROCK IN VISEU — Formulário de contacto (React)
+   Componente stateful · validação · localStorage
+   ========================================================= */
+
+const { useState, useEffect } = React;
+
+const CHAVE_STORAGE = 'rockinviseu_contactos';
+
+const MOTIVOS = [
+  { valor: '', texto: 'Escolhe um motivo...' },
+  { valor: 'informacao', texto: 'Pedido de informação' },
+  { valor: 'bilhetes', texto: 'Bilhetes' },
+  { valor: 'reclamacao', texto: 'Reclamação' },
+  { valor: 'sugestao', texto: 'Sugestão' },
+  { valor: 'parceria', texto: 'Parcerias / Imprensa' }
+];
+
+const ESTADO_INICIAL = { nome: '', motivo: '', email: '', telefone: '', mensagem: '' };
+
+/* Regras de validação (obrigatoriedade + formato) */
+function validar(dados) {
+  const erros = {};
+
+  if (!dados.nome.trim()) {
+    erros.nome = 'O nome é obrigatório.';
+  } else if (!/^[A-Za-zÀ-ÿ\s'-]{3,}$/.test(dados.nome.trim())) {
+    erros.nome = 'O nome deve ter pelo menos 3 letras e não pode conter números.';
+  }
+
+  if (!dados.motivo) {
+    erros.motivo = 'Escolhe o motivo do contacto.';
+  }
+
+  if (!dados.email.trim()) {
+    erros.email = 'O email é obrigatório.';
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(dados.email.trim())) {
+    erros.email = 'Formato de email inválido (ex: nome@dominio.pt).';
+  }
+
+  // Telefone português: 9 dígitos começados por 2 ou 9, com +351 opcional
+  const tel = dados.telefone.replace(/\s/g, '');
+  if (!tel) {
+    erros.telefone = 'O telefone é obrigatório.';
+  } else if (!/^(\+351)?[29]\d{8}$/.test(tel)) {
+    erros.telefone = 'Telefone inválido (ex: 912 345 678 ou +351 232 000 000).';
+  }
+
+  if (!dados.mensagem.trim()) {
+    erros.mensagem = 'Escreve a tua mensagem.';
+  } else if (dados.mensagem.trim().length < 10) {
+    erros.mensagem = 'A mensagem deve ter pelo menos 10 caracteres.';
+  }
+
+  return erros;
+}
+
+function FormularioContacto() {
+  // Estado do componente
+  const [dados, setDados] = useState(ESTADO_INICIAL);
+  const [erros, setErros] = useState({});
+  const [enviado, setEnviado] = useState(false);
+  const [mensagens, setMensagens] = useState([]);
+
+  // Ao montar o componente, lê as mensagens guardadas no localStorage
+  useEffect(() => {
+    const guardadas = JSON.parse(localStorage.getItem(CHAVE_STORAGE) || '[]');
+    setMensagens(guardadas);
+  }, []);
+
+  function alterar(e) {
+    const { name, value } = e.target;
+    setDados({ ...dados, [name]: value });
+    // remove o erro do campo enquanto o utilizador corrige
+    if (erros[name]) setErros({ ...erros, [name]: undefined });
+    setEnviado(false);
+  }
+
+  function submeter(e) {
+    e.preventDefault();
+    const novosErros = validar(dados);
+    setErros(novosErros);
+    if (Object.keys(novosErros).length > 0) return;
+
+    const novaMensagem = { ...dados, id: Date.now(), data: new Date().toLocaleString('pt-PT') };
+    const lista = [novaMensagem, ...mensagens];
+    localStorage.setItem(CHAVE_STORAGE, JSON.stringify(lista));
+    setMensagens(lista);
+    setDados(ESTADO_INICIAL);
+    setEnviado(true);
+  }
+
+  function apagarTudo() {
+    localStorage.removeItem(CHAVE_STORAGE);
+    setMensagens([]);
+  }
+
+  const textoMotivo = (v) => (MOTIVOS.find((m) => m.valor === v) || {}).texto;
+
+  // Pequeno componente auxiliar para cada campo
+  const Campo = ({ id, label, children }) => (
+    <div className={'form__grupo' + (erros[id] ? ' erro' : '')}>
+      <label htmlFor={id}>{label} *</label>
+      {children}
+      {erros[id] && <p className="form__erro">{erros[id]}</p>}
+    </div>
+  );
+
+  return (
+    <div>
+      {enviado && <p className="form__sucesso">Mensagem enviada com sucesso! Responderemos em breve. 🤘</p>}
+
+      <form onSubmit={submeter} noValidate>
+        {Campo({ id: 'nome', label: 'Nome', children:
+          <input id="nome" name="nome" type="text" value={dados.nome} onChange={alterar} placeholder="O teu nome" />
+        })}
+
+        {Campo({ id: 'motivo', label: 'Motivo do contacto', children:
+          <select id="motivo" name="motivo" value={dados.motivo} onChange={alterar}>
+            {MOTIVOS.map((m) => <option key={m.valor} value={m.valor}>{m.texto}</option>)}
+          </select>
+        })}
+
+        <div className="form__linha">
+          {Campo({ id: 'email', label: 'Email', children:
+            <input id="email" name="email" type="email" value={dados.email} onChange={alterar} placeholder="nome@dominio.pt" />
+          })}
+          {Campo({ id: 'telefone', label: 'Telefone', children:
+            <input id="telefone" name="telefone" type="tel" value={dados.telefone} onChange={alterar} placeholder="912 345 678" />
+          })}
+        </div>
+
+        {Campo({ id: 'mensagem', label: 'Mensagem', children:
+          <textarea id="mensagem" name="mensagem" rows="6" value={dados.mensagem} onChange={alterar} placeholder="Escreve aqui a tua mensagem..." />
+        })}
+
+        <button type="submit" className="btn">Enviar Mensagem</button>
+      </form>
+
+      {mensagens.length > 0 && (
+        <section className="mensagens">
+          <h3>Mensagens guardadas neste browser ({mensagens.length})</h3>
+          {mensagens.map((m) => (
+            <article className="mensagem" key={m.id}>
+              <strong>{m.nome}</strong> — {textoMotivo(m.motivo)}<br />
+              <small>{m.email} · {m.telefone} · {m.data}</small>
+              <p>{m.mensagem}</p>
+            </article>
+          ))}
+          <button className="btn btn--outline" onClick={apagarTudo} style={{ color: '#382461', borderColor: '#382461' }}>
+            Apagar mensagens
+          </button>
+        </section>
+      )}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('formulario-react')).render(<FormularioContacto />);
+  </script>
+</body>
+</html>
