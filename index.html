@@ -3,28 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rock in Viseu — o festival de rock no coração da Feira de São Mateus.">
-  <title>Rock in Viseu 2027 | Festival de Música</title>
+  <meta name="description" content="Rock in Viseu — um dia inteiro de rock em Viseu, a 10 de dezembro.">
+  <title>Rock in Viseu 2026 | Festival de Música</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ===== BARRA SUPERIOR: data e hora atual ===== -->
+  <!-- ===== FAIXA SUPERIOR: contagem decrescente ===== -->
   <div class="topbar">
-    <div class="wrapper topbar__inner">
-      <p class="topbar__clock" id="relogio" aria-live="polite">--</p>
-      <!-- Contagem decrescente para o festival -->
-      <a href="bilhetes.html" class="contagem" aria-label="Tempo que falta para o festival">
-        <span class="contagem__label">🔥 Faltam</span>
-        <span class="contagem__bloco"><b id="cdDias">0</b><small>dias</small></span>
-        <span class="contagem__bloco"><b id="cdHoras">00</b><small>h</small></span>
-        <span class="contagem__bloco"><b id="cdMin">00</b><small>min</small></span>
-        <span class="contagem__bloco contagem__bloco--seg"><b id="cdSeg">00</b><small>seg</small></span>
-        <span class="contagem__cta">Garante o teu bilhete →</span>
-      </a>
-      <p class="topbar__info">3 · 4 · 5 Set 2027 · Viseu</p>
+    <div class="wrapper">
+      <p class="contagem" aria-live="off">
+        🔥 Faltam <strong id="cdDias">0</strong> dias,
+        <strong id="cdHoras">00</strong>h <strong id="cdMin">00</strong>m <strong id="cdSeg">00</strong>s
+        para o Rock in Viseu
+      </p>
     </div>
   </div>
 
@@ -45,15 +39,19 @@
           <li class="nav__item tem-sub">
             <a href="bilhetes.html" class="nav__link">Bilhetes</a>
             <ul class="submenu">
-              <li><a href="bilhetes.html#diario">Bilhete Diário</a></li>
-              <li><a href="bilhetes.html#passe">Passe 3 Dias</a></li>
+              <li><a href="bilhetes.html#geral">Bilhete Geral</a></li>
+              <li><a href="bilhetes.html#golden">Golden Circle</a></li>
               <li><a href="bilhetes.html#vip">VIP</a></li>
             </ul>
           </li>
         </ul>
       </nav>
 
-      <a href="index.html" class="logo" aria-label="Rock in Viseu — página inicial">ROCK<span>in</span>VISEU</a>
+      <div class="marca">
+        <a href="index.html" class="logo" aria-label="Rock in Viseu — página inicial">ROCK<span>in</span>VISEU</a>
+        <!-- Data e hora atual (obrigatório em todas as páginas) -->
+        <p class="relogio" id="relogio" aria-live="polite">--</p>
+      </div>
 
       <nav class="nav nav--dir" aria-label="Menu direito">
         <ul class="nav__list">
@@ -67,9 +65,8 @@
           <li class="nav__item tem-sub">
             <a href="index.html#cartaz" class="nav__link">Agenda</a>
             <ul class="submenu">
-              <li><a href="index.html#cartaz" data-dia="1">Sexta · 3 Set</a></li>
-              <li><a href="index.html#cartaz" data-dia="2">Sábado · 4 Set</a></li>
-              <li><a href="index.html#cartaz" data-dia="3">Domingo · 5 Set</a></li>
+              <li><a href="index.html#cartaz" data-palco="viseu">Palco Viseu</a></li>
+              <li><a href="index.html#cartaz" data-palco="dao">Palco Dão</a></li>
             </ul>
           </li>
         </ul>
@@ -87,15 +84,15 @@
       <div class="slider" aria-label="Fotografias do festival">
         <figure class="slide ativo">
           <img src="img/slide1.svg" alt="Público em frente ao palco principal com luzes amarelas">
-          <figcaption>Palco Viseu · Edição 2026</figcaption>
+          <figcaption>Palco Viseu · Edição 2025</figcaption>
         </figure>
         <figure class="slide">
           <img src="img/slide2.svg" alt="Concerto com luzes vermelhas e multidão de braços no ar">
-          <figcaption>Noite de sábado · Edição 2026</figcaption>
+          <figcaption>Palco Dão · Edição 2025</figcaption>
         </figure>
         <figure class="slide">
           <img src="img/slide3.svg" alt="Palco iluminado em tons de azul e roxo">
-          <figcaption>Encerramento · Edição 2026</figcaption>
+          <figcaption>Encerramento · Edição 2025</figcaption>
         </figure>
 
         <button class="slider__btn slider__btn--prev" id="prev" aria-label="Imagem anterior">&#10094;</button>
@@ -105,15 +102,15 @@
 
       <div class="wrapper intro__texto">
         <article class="intro__desc">
-          <p class="etiqueta">3 · 4 · 5 Setembro 2027</p>
+          <p class="etiqueta">Quinta-feira · 10 Dezembro 2026</p>
           <h1>Rock in Viseu</h1>
-          <p>O <strong>Rock in Viseu</strong> nasce dentro da Feira de São Mateus, a feira popular mais antiga do país, para juntar a tradição de Viseu à energia das guitarras elétricas.</p>
-          <p>Durante três noites, o recinto da feira transforma-se num grande festival, com dois palcos, nomes nacionais e internacionais, zona de restauração, loja oficial e as diversões de sempre.</p>
+          <p>O <strong>Rock in Viseu</strong> é um dia inteiro dedicado ao rock, no coração de Viseu. Do fim da tarde até de madrugada, dois palcos recebem alguns dos maiores nomes do rock internacional e português.</p>
+          <p>Além dos concertos, o recinto tem zona de restauração com street food da região, loja oficial do festival e diversões para quem quer descansar entre bandas.</p>
           <a href="bilhetes.html" class="btn">Comprar Bilhete</a>
         </article>
         <aside class="intro__numeros">
-          <div class="numero"><strong>3</strong><span>noites</span></div>
-          <div class="numero"><strong>12</strong><span>artistas</span></div>
+          <div class="numero"><strong>1</strong><span>dia</span></div>
+          <div class="numero"><strong>8</strong><span>artistas</span></div>
           <div class="numero"><strong>2</strong><span>palcos</span></div>
           <div class="numero"><strong>30k</strong><span>pessoas</span></div>
         </aside>
@@ -126,42 +123,30 @@
         <h2 class="titulo titulo--claro">Cabeças de Cartaz</h2>
 
         <div class="tabs" role="tablist">
-          <button class="tab ativo" data-dia="1" role="tab">Sex · 3 Set</button>
-          <button class="tab" data-dia="2" role="tab">Sáb · 4 Set</button>
-          <button class="tab" data-dia="3" role="tab">Dom · 5 Set</button>
+          <button class="tab ativo" data-palco="viseu" role="tab">Palco Viseu</button>
+          <button class="tab" data-palco="dao" role="tab">Palco Dão</button>
         </div>
 
-        <div class="cartaz__dia ativo" data-dia="1">
+        <div class="cartaz__dia ativo" data-palco="viseu">
           <article class="artista artista--headliner" style="--cor: #ff5a1f">
-            <span class="artista__hora">Palco Viseu · 23h30</span>
+            <span class="artista__hora">Palco Viseu · 00h00</span>
             <h3>Foo Fighters</h3>
             <p>Rock alternativo · EUA</p>
           </article>
-          <article class="artista" style="--cor: #ffb703"><span class="artista__hora">Palco Viseu · 21h30</span><h3>Xutos &amp; Pontapés</h3><p>Rock português</p></article>
-          <article class="artista" style="--cor: #8b5cf6"><span class="artista__hora">Palco Dão · 20h00</span><h3>The Hives</h3><p>Garage rock · Suécia</p></article>
-          <article class="artista" style="--cor: #22d3ee"><span class="artista__hora">Palco Dão · 18h30</span><h3>Capitão Fausto</h3><p>Indie rock · Portugal</p></article>
+          <article class="artista" style="--cor: #a855f7"><span class="artista__hora">Palco Viseu · 22h15</span><h3>Linkin Park</h3><p>Rock alternativo · EUA</p></article>
+          <article class="artista" style="--cor: #ef4444"><span class="artista__hora">Palco Viseu · 20h30</span><h3>Arctic Monkeys</h3><p>Indie rock · Reino Unido</p></article>
+          <article class="artista" style="--cor: #ffb703"><span class="artista__hora">Palco Viseu · 19h00</span><h3>Xutos &amp; Pontapés</h3><p>Rock português</p></article>
         </div>
 
-        <div class="cartaz__dia" data-dia="2">
-          <article class="artista artista--headliner" style="--cor: #ef4444">
-            <span class="artista__hora">Palco Viseu · 23h30</span>
-            <h3>Arctic Monkeys</h3>
-            <p>Indie rock · Reino Unido</p>
+        <div class="cartaz__dia" data-palco="dao">
+          <article class="artista artista--headliner" style="--cor: #8b5cf6">
+            <span class="artista__hora">Palco Dão · 23h00</span>
+            <h3>Moonspell</h3>
+            <p>Metal · Portugal</p>
           </article>
-          <article class="artista" style="--cor: #ffb703"><span class="artista__hora">Palco Viseu · 21h30</span><h3>The Black Keys</h3><p>Blues rock · EUA</p></article>
-          <article class="artista" style="--cor: #8b5cf6"><span class="artista__hora">Palco Dão · 20h00</span><h3>Moonspell</h3><p>Metal · Portugal</p></article>
-          <article class="artista" style="--cor: #22d3ee"><span class="artista__hora">Palco Dão · 18h30</span><h3>The Legendary Tigerman</h3><p>Rock · Portugal</p></article>
-        </div>
-
-        <div class="cartaz__dia" data-dia="3">
-          <article class="artista artista--headliner" style="--cor: #a855f7">
-            <span class="artista__hora">Palco Viseu · 23h00</span>
-            <h3>Linkin Park</h3>
-            <p>Rock alternativo · EUA</p>
-          </article>
-          <article class="artista" style="--cor: #ffb703"><span class="artista__hora">Palco Viseu · 21h30</span><h3>Muse</h3><p>Rock alternativo · Reino Unido</p></article>
-          <article class="artista" style="--cor: #8b5cf6"><span class="artista__hora">Palco Dão · 20h00</span><h3>GNR</h3><p>Pop rock · Portugal</p></article>
-          <article class="artista" style="--cor: #22d3ee"><span class="artista__hora">Palco Dão · 18h30</span><h3>Linda Martini</h3><p>Rock alternativo · Portugal</p></article>
+          <article class="artista" style="--cor: #22d3ee"><span class="artista__hora">Palco Dão · 21h30</span><h3>The Hives</h3><p>Garage rock · Suécia</p></article>
+          <article class="artista" style="--cor: #ffb703"><span class="artista__hora">Palco Dão · 20h00</span><h3>Capitão Fausto</h3><p>Indie rock · Portugal</p></article>
+          <article class="artista" style="--cor: #ff5a1f"><span class="artista__hora">Palco Dão · 18h30</span><h3>Linda Martini</h3><p>Rock alternativo · Portugal</p></article>
         </div>
       </div>
     </section>
@@ -216,7 +201,7 @@
             <!-- Zonas informativas (não clicáveis) -->
             <rect x="40" y="40" width="220" height="250" rx="14" class="mapa__fixo"/>
             <text x="150" y="160" class="mapa__label mapa__label--peq mapa__label--escuro">🎡 DIVERSÕES</text>
-            <text x="150" y="185" class="mapa__sub mapa__sub--escuro">Feira de São Mateus</text>
+            <text x="150" y="185" class="mapa__sub mapa__sub--escuro">Roda gigante · Carrinhos</text>
 
             <rect x="290" y="400" width="190" height="80" rx="12" class="mapa__fixo"/>
             <text x="385" y="447" class="mapa__label mapa__label--peq mapa__label--escuro">🚻 WC</text>
@@ -250,7 +235,7 @@
         <h2 class="parceiros__titulo">Patrocinadores Oficiais</h2>
         <ul class="parceiros__lista">
           <li>Município de Viseu</li>
-          <li>Feira de São Mateus</li>
+          <li>Viseu Street Food</li>
           <li>Visit Viseu</li>
           <li>Rádio Rock FM</li>
           <li>Vinhos do Dão</li>
@@ -267,7 +252,7 @@
     <div class="wrapper footer__grid">
       <div>
         <a href="index.html" class="logo">ROCK<span>in</span>VISEU</a>
-        <p>O festival de rock da feira popular mais antiga do país.</p>
+        <p>Um dia inteiro de rock no coração de Viseu.</p>
         <ul class="social">
           <li><a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
             <svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9l5.8 3.1-5.8 3.1z"/></svg>
@@ -305,7 +290,7 @@
         </ul>
       </nav>
     </div>
-    <p class="footer__copy">&copy; 2027 Rock in Viseu · Projeto académico (cartaz fictício) — Aplicações para a Internet I, ESTGV</p>
+    <p class="footer__copy">&copy; 2026 Rock in Viseu · Projeto académico (cartaz fictício) — Aplicações para a Internet I, ESTGV</p>
   </footer>
 
   <script src="js/main.js"></script>

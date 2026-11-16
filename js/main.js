@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ---------- 1b. Contagem decrescente para o festival ---------- */
-  const DATA_FESTIVAL = new Date('2027-09-03T18:00:00'); // abertura das portas
+  const DATA_FESTIVAL = new Date('2026-12-10T18:00:00'); // 10 de dezembro, abertura das portas
   const cdDias = document.getElementById('cdDias');
 
   function doisDigitos(n) { return String(n).padStart(2, '0'); }
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // quando chegar a hora, troca o texto
     if (diff === 0) {
-      document.querySelector('.contagem__label').textContent = '🤘 É agora!';
+      document.querySelector('.contagem').textContent = '🤘 O Rock in Viseu é hoje!';
     }
   }
   if (cdDias) {
@@ -127,21 +127,21 @@ document.addEventListener('DOMContentLoaded', function () {
     reiniciar();
   }
 
-  /* ---------- 4. Agenda: separadores por dia ---------- */
+  /* ---------- 4. Cartaz: separadores por palco ---------- */
   const tabs = document.querySelectorAll('.tab');
-  const dias = document.querySelectorAll('.cartaz__dia');
+  const palcos = document.querySelectorAll('.cartaz__dia');
 
-  function mostrarDia(dia) {
-    tabs.forEach(function (t) { t.classList.toggle('ativo', t.dataset.dia === dia); });
-    dias.forEach(function (d) { d.classList.toggle('ativo', d.dataset.dia === dia); });
+  function mostrarPalco(palco) {
+    tabs.forEach(function (t) { t.classList.toggle('ativo', t.dataset.palco === palco); });
+    palcos.forEach(function (p) { p.classList.toggle('ativo', p.dataset.palco === palco); });
   }
   tabs.forEach(function (tab) {
-    tab.addEventListener('click', function () { mostrarDia(tab.dataset.dia); });
+    tab.addEventListener('click', function () { mostrarPalco(tab.dataset.palco); });
   });
-  // os itens do submenu "Agenda" abrem logo o dia certo
-  document.querySelectorAll('.submenu a[data-dia]').forEach(function (a) {
+  // os itens do submenu "Agenda" abrem logo o palco certo
+  document.querySelectorAll('.submenu a[data-palco]').forEach(function (a) {
     a.addEventListener('click', function () {
-      if (tabs.length) mostrarDia(a.dataset.dia);
+      if (tabs.length) mostrarPalco(a.dataset.palco);
     });
   });
 

@@ -3,28 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rock in Viseu — o festival de rock no coração da Feira de São Mateus.">
-  <title>Notícias | Rock in Viseu 2027</title>
+  <meta name="description" content="Rock in Viseu — um dia inteiro de rock em Viseu, a 10 de dezembro.">
+  <title>Notícias | Rock in Viseu 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ===== BARRA SUPERIOR: data e hora atual ===== -->
+  <!-- ===== FAIXA SUPERIOR: contagem decrescente ===== -->
   <div class="topbar">
-    <div class="wrapper topbar__inner">
-      <p class="topbar__clock" id="relogio" aria-live="polite">--</p>
-      <!-- Contagem decrescente para o festival -->
-      <a href="bilhetes.html" class="contagem" aria-label="Tempo que falta para o festival">
-        <span class="contagem__label">🔥 Faltam</span>
-        <span class="contagem__bloco"><b id="cdDias">0</b><small>dias</small></span>
-        <span class="contagem__bloco"><b id="cdHoras">00</b><small>h</small></span>
-        <span class="contagem__bloco"><b id="cdMin">00</b><small>min</small></span>
-        <span class="contagem__bloco contagem__bloco--seg"><b id="cdSeg">00</b><small>seg</small></span>
-        <span class="contagem__cta">Garante o teu bilhete →</span>
-      </a>
-      <p class="topbar__info">3 · 4 · 5 Set 2027 · Viseu</p>
+    <div class="wrapper">
+      <p class="contagem" aria-live="off">
+        🔥 Faltam <strong id="cdDias">0</strong> dias,
+        <strong id="cdHoras">00</strong>h <strong id="cdMin">00</strong>m <strong id="cdSeg">00</strong>s
+        para o Rock in Viseu
+      </p>
     </div>
   </div>
 
@@ -45,15 +39,19 @@
           <li class="nav__item tem-sub">
             <a href="bilhetes.html" class="nav__link">Bilhetes</a>
             <ul class="submenu">
-              <li><a href="bilhetes.html#diario">Bilhete Diário</a></li>
-              <li><a href="bilhetes.html#passe">Passe 3 Dias</a></li>
+              <li><a href="bilhetes.html#geral">Bilhete Geral</a></li>
+              <li><a href="bilhetes.html#golden">Golden Circle</a></li>
               <li><a href="bilhetes.html#vip">VIP</a></li>
             </ul>
           </li>
         </ul>
       </nav>
 
-      <a href="index.html" class="logo" aria-label="Rock in Viseu — página inicial">ROCK<span>in</span>VISEU</a>
+      <div class="marca">
+        <a href="index.html" class="logo" aria-label="Rock in Viseu — página inicial">ROCK<span>in</span>VISEU</a>
+        <!-- Data e hora atual (obrigatório em todas as páginas) -->
+        <p class="relogio" id="relogio" aria-live="polite">--</p>
+      </div>
 
       <nav class="nav nav--dir" aria-label="Menu direito">
         <ul class="nav__list">
@@ -67,9 +65,8 @@
           <li class="nav__item tem-sub">
             <a href="index.html#cartaz" class="nav__link">Agenda</a>
             <ul class="submenu">
-              <li><a href="index.html#cartaz" data-dia="1">Sexta · 3 Set</a></li>
-              <li><a href="index.html#cartaz" data-dia="2">Sábado · 4 Set</a></li>
-              <li><a href="index.html#cartaz" data-dia="3">Domingo · 5 Set</a></li>
+              <li><a href="index.html#cartaz" data-palco="viseu">Palco Viseu</a></li>
+              <li><a href="index.html#cartaz" data-palco="dao">Palco Dão</a></li>
             </ul>
           </li>
         </ul>
@@ -94,12 +91,12 @@
         <article class="noticia">
           <time datetime="2026-11-10">10 Nov 2026</time>
           <h2>Foo Fighters abrem o festival</h2>
-          <p>A banda norte-americana é o primeiro cabeça de cartaz confirmado para a noite de sexta-feira.</p>
+          <p>A banda norte-americana é o cabeça de cartaz e fecha a noite no Palco Viseu.</p>
         </article>
         <article class="noticia">
           <time datetime="2026-11-02">02 Nov 2026</time>
-          <h2>Passes de 3 dias já à venda</h2>
-          <p>Os primeiros 1000 passes têm preço especial de lançamento. Não fiques de fora.</p>
+          <h2>Bilhetes já à venda</h2>
+          <p>Os primeiros 1000 bilhetes têm preço especial de lançamento. Não fiques de fora.</p>
         </article>
         <article class="noticia">
           <time datetime="2026-10-20">20 Out 2026</time>
@@ -120,7 +117,7 @@
     <div class="wrapper footer__grid">
       <div>
         <a href="index.html" class="logo">ROCK<span>in</span>VISEU</a>
-        <p>O festival de rock da feira popular mais antiga do país.</p>
+        <p>Um dia inteiro de rock no coração de Viseu.</p>
         <ul class="social">
           <li><a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
             <svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9l5.8 3.1-5.8 3.1z"/></svg>
@@ -158,7 +155,7 @@
         </ul>
       </nav>
     </div>
-    <p class="footer__copy">&copy; 2027 Rock in Viseu · Projeto académico (cartaz fictício) — Aplicações para a Internet I, ESTGV</p>
+    <p class="footer__copy">&copy; 2026 Rock in Viseu · Projeto académico (cartaz fictício) — Aplicações para a Internet I, ESTGV</p>
   </footer>
 
   <script src="js/main.js"></script>
